@@ -8,14 +8,14 @@ public class LoginPage {
 
     private By usernameInput = By.id("username");
     private By passwordInput = By.id("password");
-    private By loginButton = By.id("loginBtn");
+    private By loginButton = By.className("radius");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
     public void open() {
-        driver.get("https://example.com/login"); // замени на реальный URL
+        driver.get("https://the-internet.herokuapp.com/login"); // замени на реальный URL
     }
 
     public void enterUsername(String username) {
