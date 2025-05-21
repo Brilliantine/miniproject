@@ -6,16 +6,16 @@ import org.openqa.selenium.WebDriver;
 public class LoginPage {
     private WebDriver driver;
 
-    private By usernameInput = By.id("j_username");
-    private By passwordInput = By.id("j_password");
-    private By loginButton = By.className("btn btn-primary");
+    private By usernameInput = By.id("username");
+    private By passwordInput = By.id("password");
+    private By loginButton = By.className("radius");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
     public void open() {
-        driver.get("https://test-pass.rzd.ru/universal/logon/ru#BY_LOGIN");
+        driver.get("https://the-internet.herokuapp.com/login");
     }
 
     public void enterUsername(String username) {
