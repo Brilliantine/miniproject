@@ -4,18 +4,25 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
+import org.example.pages.LinksPage;
 import java.util.*;
 
 public class LinksTest {
     public static void main(String[] args){
         // 1. Настройка драйвера
         WebDriver driver = new FirefoxDriver();
-        driver.get("https://the-internet.herokuapp.com/");
+        driver.manage().window().maximize();
 
+        LinksPage linksPage = new LinksPage(driver);
+        linksPage.open();
+
+        linksPage.searchLinks();
+        linksPage.printTextAndUrl();
+        linksPage.uniqueLinks();
         // 2. Получение всех ссылок
         List<WebElement> links = driver.findElements(By.tagName("a"));
         System.out.println("Всего ссылок: " + links.size());
+
 
         // 3. Вывод текста и href
         for (WebElement link : links) {
